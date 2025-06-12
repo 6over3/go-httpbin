@@ -11,5 +11,5 @@ RUN --mount=type=cache,id=gobuild,target=/root/.cache/go-build \
 FROM gcr.io/distroless/base
 
 COPY --from=build /go/src/github.com/mccutchen/go-httpbin/dist/go-httpbin* /bin/
-
+EXPOSE 3000
 CMD ["/bin/go-httpbin"]
